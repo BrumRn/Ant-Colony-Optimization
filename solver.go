@@ -4,7 +4,7 @@
 //
 // The ACO algorithm in this package is based on the simplest variant known as Ant System. Other more refined variants include MMAS and Ant Colony System.
 // Important guidelines when defining constants are that all constants are required to be strictly positive, alfa < beta, rho < 1.
-package main
+package ACO
 
 import (
 	"bufio"

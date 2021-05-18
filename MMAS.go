@@ -1,4 +1,4 @@
-package main
+package ACO
 
 // A colony of ants.
 type mmasColony struct {
