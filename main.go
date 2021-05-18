@@ -43,12 +43,22 @@ func printMatrix(matrix [][]float64) {
 func main() {
 
 	graph, optimalCost := cities26()
-	cost, _ := SolveATSP(graph, 1, 10, 0.5, 1000, 50, 1)
+	cost, _ := SolveAS(graph, 1, 10, 0.5, 1000, 50, 1)
 	isCorrect(cost, optimalCost, "SolveATSP")
 
-	graph = ReadATSP("ATSP/rbg443.atsp")
+	graph = ReadATSP("ATSP/ftv38.atsp")
 
-	cost, solution := SolveATSP(graph, 1, 10, 0.5, 1000, 500, 10)
+	cost, solution := SolveAS(graph, 1, 10, 0.5, 1000, 500, 100)
+	fmt.Println("Cost:", cost)
+	fmt.Print("Solution: ")
+	fmt.Println(solution)
+
+	cost, solution = SolveMMAS(graph, 1, 10, 0.5, 1000, 500, 10, 1, 100)
+	fmt.Println("Cost:", cost)
+	fmt.Print("Solution: ")
+	fmt.Println(solution)
+
+	cost, solution = SolveACS(graph, 1, 10, 0.1, 10, 10, 1000, 0.1, 0.1, 100)
 	fmt.Println("Cost:", cost)
 	fmt.Print("Solution: ")
 	fmt.Println(solution)
